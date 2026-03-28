@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clan SHADOW_ELITE</title>
+  <link rel="icon" href="https://i.postimg.cc/PrX6Sg9M/IMG-20260306-WA0014.jpg" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            tajawal: ['Tajawal', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
+
+    :root { scroll-behavior: smooth; }
+    body { font-family: 'Tajawal', sans-serif; }
+
+    /* خلفية جديدة بالكامل */
+    .bg-mesh {
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(99,102,241,.28), transparent 60%),
+        radial-gradient(900px 500px at 85% 25%, rgba(16,185,129,.22), transparent 55%),
+        radial-gradient(900px 500px at 30% 90%, rgba(236,72,153,.18), transparent 60%),
+        linear-gradient(180deg, rgba(17,24,39,0.0), rgba(17,24,39,0.04));
+    }
+    .dark .bg-mesh {
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(99,102,241,.20), transparent 60%),
+        radial-gradient(900px 500px at 85% 25%, rgba(16,185,129,.18), transparent 55%),
+        radial-gradient(900px 500px at 30% 90%, rgba(236,72,153,.14), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.20));
+    }
+
+    /* كروت زجاج */
+    .glass {
+      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(255,255,255,.55);
+      box-shadow: 0 20px 60px rgba(0,0,0,.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .dark .glass {
+      background: rgba(17,24,39,.60);
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 20px 60px rgba(0,0,0,.40);
+    }
+
+    /* زر متحرك */
+    .btn-sheen {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-sheen::after {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: -60%;
+      width: 40%;
+      height: 180%;
+      transform: rotate(25deg);
+      background: rgba(255,255,255,.35);
+      filter: blur(1px);
+      transition: left .6s ease;
+    }
+    .btn-sheen:hover::after { left: 130%; }
+
+    /* قائمة موبايل */
+    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height .45s ease; }
+    .mobile-menu.open { max-height: 520px; }
+
+    /* سكرولبار بسيط */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-thumb { background: rgba(107,114,128,.5); border-radius: 999px; }
+    .dark ::-webkit-scrollbar-thumb { background: rgba(156,163,175,.35); }
+
+    /* أكورديون FAQ */
+    .faq-body { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+    .faq-item.open .faq-body { max-height: 260px; }
+
+    /* Toast */
+    .toast { opacity: 0; transform: translateY(10px); transition: all .25s ease; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+  .clan-logo-section {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.clan-logo-section h3 {
+  margin-bottom: 14px;
+  font-size: 22px;
+}
+
+.clan-logo {
+  width: 200px;
+  max-width: 85%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.30);
+}
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-50 bg-mesh">
+  <!-- Top Bar -->
+  <div class="w-full">
+    <header class="sticky top-0 z-50">
+      <div class="mx-auto max-w-7xl px-4 py-3">
+        <div class="glass rounded-2xl px-4 py-3 flex items-center justify-between">
+          <!-- Brand -->
+          <a href="#home" class="flex items-center gap-3">
+            <img src="https://i.postimg.cc/PrX6Sg9M/IMG-20260306-WA0014.jpg" alt="شعار SHADOW_ELITE" class="w-10 h-10 rounded-full object-cover ring-2 ring-white/40 dark:ring-white/10" />
+            <div class="leading-tight">
+              <div class="font-black text-lg tracking-wide">Clan SHADOW_ELITE</div>
+              <div class="text-xs text-gray-600 dark:text-gray-300">Support • Scrims • Community</div>
+            </div>
+          </a>
+
+          <!-- Desktop Nav -->
+          <nav class="hidden lg:flex items-center gap-1">
+            <a href="#about" class="px-3 py-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition">عنّا</a>
+            <a href="#services" class="px-3 py-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition">الخدمات</a>
+            <a href="#apply" class="px-3 py-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition">التقديم</a>
+            <a href="#results" class="px-3 py-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition">النتيجة</a>
+            <a href="#contact" class="px-3 py-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition">تواصل</a>
+          </nav>
+
+          <!-- Actions -->
+          <div class="flex items-center gap-2">
+            <button id="themeToggle" class="w-10 h-10 rounded-xl grid place-items-center hover:bg-black/5 dark:hover:bg-white/5 transition" aria-label="تبديل الوضع">
+              <i id="themeIcon" class="fa-solid fa-moon text-gray-700 dark:text-yellow-300"></i>
+            </button>
+
+            <button id="mobileBtn" class="lg:hidden w-10 h-10 rounded-xl grid place-items-center hover:bg-black/5 dark:hover:bg-white/5 transition" aria-label="القائمة">
+              <i id="mobileIcon" class="fa-solid fa-bars text-gray-700 dark:text-gray-200"></i>
+            </button>
+
+            <a href="#apply" class="hidden sm:inline-flex btn-sheen items-center gap-2 px-4 py-2 rounded-xl text-white bg-gray-900 hover:bg-black transition dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              انضم الآن
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu lg:hidden mt-3">
+          <div class="glass rounded-2xl p-3 grid gap-2">
+            <a href="#about" class="px-4 py-3 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition">عنّا</a>
+            <a href="#services" class="px-4 py-3 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition">الخدمات</a>
+            <a href="#apply" class="px-4 py-3 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition">التقديم</a>
+            <a href="#results" class="px-4 py-3 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition">النتيجة</a>
+            <a href="#contact" class="px-4 py-3 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition">تواصل</a>
+            <a href="#apply" class="btn-sheen mt-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-white bg-gray-900 hover:bg-black transition dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              انضم الآن
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- HERO -->
+  <section id="home" class="relative">
+    <div class="mx-auto max-w-7xl px-4 pt-10 pb-8">
+      <div class="grid lg:grid-cols-2 gap-6 items-stretch">
+        <!-- Hero text -->
+        <div class="glass rounded-3xl p-6 sm:p-8">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 dark:bg-white/5 text-sm">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>بوابة الدعم الرسمية لـ SHADOW_ELITE</span>
+          </div>
+
+          <h1 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black leading-tight">
+            أهلاً بيك في <span class="text-transparent bg-clip-text bg-gradient-to-l from-indigo-500 via-emerald-500 to-pink-500">Clan SHADOW_ELITE</span>
+          </h1>
+
+          <p class="mt-4 text-gray-700 dark:text-gray-200 text-lg leading-relaxed">
+            لو عندك مشكلة، أو عايز تقدم، أو تستعلم عن النتيجة — كل حاجة هنا في مكان واحد بشكل بسيط وسريع.
+          </p>
+
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="#apply" class="btn-sheen inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-gray-900 text-white hover:bg-black transition dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200">
+              <i class="fa-solid fa-paper-plane"></i>
+              قدّم دلوقتي
+            </a>
+            <a href="#results" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              استعلم عن النتيجة
+            </a>
+          </div>
+
+          <div class="mt-6 grid grid-cols-3 gap-3">
+            <div class="rounded-2xl p-4 bg-black/5 dark:bg-white/5">
+              <div class="text-2xl font-black">24/7</div>
+              <div class="text-xs text-gray-600 dark:text-gray-300">دعم</div>
+            </div>
+            <div class="rounded-2xl p-4 bg-black/5 dark:bg-white/5">
+              <div class="text-2xl font-black">Scrims</div>
+              <div class="text-xs text-gray-600 dark:text-gray-300">متابعة</div>
+            </div>
+            <div class="rounded-2xl p-4 bg-black/5 dark:bg-white/5">
+              <div class="text-2xl font-black">Fair</div>
+              <div class="text-xs text-gray-600 dark:text-gray-300">تقييم</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero panel -->
+        <div class="glass rounded-3xl p-6 sm:p-8 relative overflow-hidden">
+          <div class="absolute -top-20 -left-20 w-56 h-56 rounded-full bg-indigo-500/20 blur-2xl"></div>
+          <div class="absolute -bottom-24 -right-20 w-64 h-64 rounded-full bg-emerald-500/20 blur-2xl"></div>
+
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="text-sm text-gray-600 dark:text-gray-300">مركز التحكم</div>
+              <div class="text-2xl font-black">لوحة سريعة</div>
+            </div>
+            <div class="w-12 h-12 rounded-2xl grid place-items-center bg-black/5 dark:bg-white/5">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+          </div>
+
+          <div class="mt-6 grid sm:grid-cols-2 gap-4">
+            <a href="#services" class="group rounded-2xl p-5 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition">
+              <div class="flex items-center justify-between">
+                <div class="font-bold">الخدمات</div>
+                <i class="fa-solid fa-arrow-left transition group-hover:-translate-x-1"></i>
+              </div>
+              <div class="mt-2 text-sm text-gray-600 dark:text-gray-300">تعرف على المميزات والشروط والتواصل.</div>
+            </a>
+
+            <a href="#contact" class="group rounded-2xl p-5 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition">
+              <div class="flex items-center justify-between">
+                <div class="font-bold">مراسلة الدعم</div>
+                <i class="fa-solid fa-arrow-left transition group-hover:-translate-x-1"></i>
+              </div>
+              <div class="mt-2 text-sm text-gray-600 dark:text-gray-300">ابعت استفسارك وسيتم الرد.</div>
+            </a>
+
+            <div class="rounded-2xl p-5 border border-black/10 dark:border-white/10">
+              <div class="flex items-center gap-2 text-sm">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+
+            <div class="rounded-2xl p-5 border border-black/10 dark:border-white/10">
+              <div class="flex items-center gap-2 text-sm">
+                <i class="fa-solid fa-lock"></i>
+                <span class="font-bold">خصوصية</span>
+              </div>
+              <p class="mt-2 text-sm text-gray-700 dark:text-gray-200">
+                بياناتك تُستخدم للتقييم فقط — وملف الفيديو حد أقصى دقيقتين.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <a href="#apply" class="btn-sheen w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-gradient-to-l from-indigo-600 via-emerald-600 to-pink-600 text-white hover:opacity-95 transition">
+              <i class="fa-solid fa-user-plus"></i>
+              ابدأ التقديم الآن
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="mx-auto max-w-7xl px-4 py-10">
+    <div class="grid lg:grid-cols-3 gap-6">
+      <div class="lg:col-span-2 glass rounded-3xl p-6 sm:p-8">
+        <h2 class="text-2xl sm:text-3xl font-black">مين إحنا؟</h2>
+        <p class="mt-3 text-gray-700 dark:text-gray-200 leading-relaxed">
+          <div class="clan-logo-section">
+  <img src="https://i.postimg.cc/PrX6Sg9M/IMG-20260306-WA0014.jpg" alt="لوجو Clan SHADOW_ELITE" class="clan-logo" />
+          </div>
+          إحنا فريق دعم وإدارة Clan SHADOW_ELITE. عملنا الموقع ده علشان أي مشكلة أو تقديم أو متابعة نتيجة تكون سهلة من الموبايل والكمبيوتر.
+        </p>
+
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl p-5 bg-black/5 dark:bg-white/5">
+            <div class="flex items-center gap-2 font-bold">
+              <i class="fa-solid fa-user-shield"></i>
+              إدارة منظمة
+            </div>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">تقديم واضح + متابعة نتيجة + تواصل سريع.</p>
+          </div>
+          <div class="rounded-2xl p-5 bg-black/5 dark:bg-white/5">
+            <div class="flex items-center gap-2 font-bold">
+              <i class="fa-solid fa-gamepad"></i>
+              مجتمع لاعبين
+            </div>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Scrims + تطوير مستوى + تقييم عادل.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass rounded-3xl p-6 sm:p-8">
+        <h3 class="text-xl font-black">فريق الإدارة</h3>
+        <div class="mt-4 grid gap-3">
+          <div class="rounded-2xl p-4 border border-black/10 dark:border-white/10 flex items-center justify-between">
+            <div>
+              <div class="font-bold">SAW×MORA`MR</div>
+              <div class="text-xs text-gray-600 dark:text-gray-300">الليدر</div>
+            </div>
+            <i class="fa-solid fa-crown"></i>
+          </div>
+
+          <div class="rounded-2xl p-4 border border-black/10 dark:border-white/10 flex items-center justify-between">
+            <div>
+              <div class="font-bold">SAWxMØDY`MR</div>
+              <div class="text-xs text-gray-600 dark:text-gray-300">كو ليدر</div>
+            </div>
+            <i class="fa-solid fa-user-gear"></i>
+          </div>
+
+          <div class="rounded-2xl p-4 border border-black/10 dark:border-white/10 flex items-center justify-between">
+            <div>
+              <div class="font-bold">SAWxMØDY`MR</div>
+              <div class="text-xs text-gray-600 dark:text-gray-300">سوشيال الكلان</div>
+            </div>
+            <i class="fa-solid fa-clipboard-check"></i>
+          </div>
+
+          <div class="rounded-2xl p-4 border border-black/10 dark:border-white/10 flex items-center justify-between">
+            <div>
+              <div class="font-bold">SAW×GOLD`MR</div>
+              <div class="text-xs text-gray-600 dark:text-gray-300">تيستر</div>
+            </div>
+            <i class="fa-solid fa-clipboard-check"></i>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="mx-auto max-w-7xl px-4 py-10">
+    <div class="glass rounded-3xl p-6 sm:p-8">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-black">الخدمات والمميزات</h2>
+          <p class="mt-2 text-gray-700 dark:text-gray-200">كل اللي محتاجه في صفحة واحدة.</p>
+        </div>
+        <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition">
+          <i class="fa-solid fa-headset"></i>
+          تواصل سريع
+        </a>
+      </div>
+
+      <div class="mt-6 grid lg:grid-cols-3 gap-4">
+        <!-- Card 1 -->
+        <div class="rounded-3xl p-6 bg-black/5 dark:bg-white/5">
+          <div class="w-12 h-12 rounded-2xl grid place-items-center bg-white/70 dark:bg-gray-900/60 border border-black/10 dark:border-white/10">
+            <i class="fa-brands fa-whatsapp text-xl"></i>
+          </div>
+          <h3 class="mt-4 font-black text-xl">التواصل</h3>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">تواصل واتساب.</p>
+
+          <div class="mt-4 grid gap-2 text-sm">
+            <a class="inline-flex items-center gap-2 hover:underline" href="https://wa.me/2001033994292">
+              <i class="fa-brands fa-whatsapp"></i> SAW×MORA`MR
+            </a>
+            <a class="inline-flex items-center gap-2 hover:underline" href="https://wa.me/2001001848476">
+              <i class="fa-brands fa-whatsapp"></i> SAWxMØDY`MR
+            </a>
+            <a class="inline-flex items-center gap-2 hover:underline" href="https://wa.me/+967737809399">
+              <i class="fa-brands fa-whatsapp"></i> SAW×GOLD`MR
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="rounded-3xl p-6 bg-black/5 dark:bg-white/5">
+          <div class="w-12 h-12 rounded-2xl grid place-items-center bg-white/70 dark:bg-gray-900/60 border border-black/10 dark:border-white/10">
+            <i class="fa-solid fa-trophy text-xl"></i>
+          </div>
+          <h3 class="mt-4 font-black text-xl">مميزات</h3>
+          <ul class="mt-3 grid gap-2 text-sm text-gray-700 dark:text-gray-200">
+            <li class="flex items-start gap-2"><i class="fa-solid fa-check mt-1"></i><span>بندخل اسكرمات وبطولات و تنظيم من عندنا كمان</span></li>
+            <li class="flex items-start gap-2"><i class="fa-solid fa-check mt-1"></i><span>بنقيم كل سيزون التمت وكلاسيك</span></li>
+            <li class="flex items-start gap-2"><i class="fa-solid fa-check mt-1"></i><span>بنوفر اشتراكات و ايفينتات للروسترات القويه وفينلات</span></li>
+            <li class="flex items-start gap-2"><i class="fa-solid fa-check mt-1"></i><span>بنجهز ل بطوله ال PMNC و هنسجل ب افضل لعيبه</span></li>
+            <li class="flex items-start gap-2"><i class="fa-solid fa-check mt-1"></i><span>بنجهز ل بطوله ال PMNC و هنسجل ب افضل لعيبه</span></li>
+            <li class="flex items-start gap-2"><i class="fa-solid fa-check mt-1"></i><span>حـرفـيـا أي حـاجـه مـحـتـاجـهـا هـتـلاقـيـهـا فـي SWA</span></li>
+          </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="rounded-3xl p-6 bg-black/5 dark:bg-white/5">
+          <div class="w-12 h-12 rounded-2xl grid place-items-center bg-white/70 dark:bg-gray-900/60 border border-black/10 dark:border-white/10">
+            <i class="fa-solid fa-clipboard-list text-xl"></i>
+          </div>
+          <h3 class="mt-4 font-black text-xl">شروط</h3>
+          <ul class="mt-3 grid gap-2 text-sm text-gray-700 dark:text-gray-200">
+            <li class="flex items-start gap-2"><i class="fa-solid fa-check mt-1"></i><span>السن +13</span></li>
+            <li class="flex items-start gap-2"><i class="fa-solid fa-check mt-1"></i><span>فريمات ثابتة +40</span></li>
+            <li class="flex items-start gap-2"><i class="fa-solid fa-check mt-1"></i><span>خبرة اسكرمات</span></li>
+            <li class="flex items-start gap-2"><i class="fa-solid fa-check mt-1"></i><span>التزام وتعاون مع التيم</span></li>
+            <li class="flex items-start gap-2"><i class="fa-solid fa-check mt-1"></i><span>معاك ID سكرينات</span></li>
+            <li class="flex items-start gap-2"><i class="fa-solid fa-check mt-1"></i><span>المراكز المطلوبة: IGL – Fragger – Support – Sniper</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="mt-8">
+        <h3 class="text-xl font-black">أسئلة سريعة</h3>
+
+        <div class="mt-4 grid gap-3">
+          <div class="faq-item rounded-2xl border border-black/10 dark:border-white/10 p-4">
+            <button class="faq-btn w-full flex items-center justify-between gap-3 text-right">
+              <span class="font-bold">هل لازم فيديو؟</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-body">
+              <p class="pt-3 text-sm text-gray-700 dark:text-gray-200">
+                نعم، الفيديو مهم للتقييم، وحده الأقصى دقيقتين.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item rounded-2xl border border-black/10 dark:border-white/10 p-4">
+            <button class="faq-btn w-full flex items-center justify-between gap-3 text-right">
+              <span class="font-bold">النتيجة بتظهر إزاي؟</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-body">
+              <p class="pt-3 text-sm text-gray-700 dark:text-gray-200">
+                بتكتب رقمك في الاستعلام، ولو فيه نتيجة هتقدر تشوفها أو تحملها.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item rounded-2xl border border-black/10 dark:border-white/10 p-4">
+            <button class="faq-btn w-full flex items-center justify-between gap-3 text-right">
+              <span class="font-bold">لو ظهر “لا توجد نتائج”؟</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-body">
+              <p class="pt-3 text-sm text-gray-700 dark:text-gray-200">
+                اعمل Refresh للصفحة وحاول تاني.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY -->
+  <section id="apply" class="mx-auto max-w-7xl px-4 py-10">
+    <div class="grid lg:grid-cols-5 gap-6 items-start">
+      <div class="lg:col-span-2 glass rounded-3xl p-6 sm:p-8">
+        <h2 class="text-2xl sm:text-3xl font-black">تقديم الكلان</h2>
+        <p class="mt-2 text-gray-700 dark:text-gray-200">
+          املأ البيانات وارفع فيديو قصير (حد أقصى دقيقتين).
+        </p>
+
+        <div class="mt-6 rounded-2xl p-5 bg-black/5 dark:bg-white/5">
+          <div class="flex items-center gap-2 font-bold">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            تعليمات
+          </div>
+          <ul class="mt-2 text-sm text-gray-700 dark:text-gray-200 grid gap-1">
+            <li>• اضغط إرسال مرة واحدة فقط.</li>
+            <li>• رقم الهاتف يكون صحيح علشان الاستعلام.</li>
+            <li>• الفيديو يفضل يكون واضح وصوته مسموع.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lg:col-span-3 glass rounded-3xl p-6 sm:p-8">
+        <form id="bookingForm" enctype="multipart/form-data" class="grid sm:grid-cols-2 gap-4">
+          <div class="sm:col-span-2">
+            <label class="text-sm font-bold">الاسم الكامل</label>
+            <input id="bName" type="text" required
+              class="mt-1 w-full px-4 py-3 rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-gray-950/40 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+
+          <div>
+            <label class="text-sm font-bold">البريد الإلكتروني</label>
+            <input id="bEmail" type="email" required
+              class="mt-1 w-full px-4 py-3 rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-gray-950/40 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+
+          <div>
+            <label class="text-sm font-bold">رقم الهاتف</label>
+            <input id="bPhone" type="tel" required
+              class="mt-1 w-full px-4 py-3 rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-gray-950/40 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+
+          <div>
+            <label class="text-sm font-bold">مركزك في الاسكريم</label>
+            <select id="bScrim" required
+              class="mt-1 w-full px-4 py-3 rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-gray-950/40 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="">اختر</option>
+              <option value="IGL">IGL</option>
+              <option value="Fragger">Fragger</option>
+              <option value="Supporter">Supporter</option>
+              <option value="Scouter">Scouter</option>
+              <option value="Flanker">Flanker</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-sm font-bold">عدد الفريمات</label>
+            <select id="bDuration" required
+              class="mt-1 w-full px-4 py-3 rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-gray-950/40 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="">اختر</option>
+              <option value="30">30</option>
+              <option value="40">40</option>
+              <option value="60">60</option>
+              <option value="90">90</option>
+              <option value="120">120</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-sm font-bold">السن</label>
+            <input id="bAge" type="text" required placeholder="أدخل سن اللاعب"
+              class="mt-1 w-full px-4 py-3 rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-gray-950/40 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+
+          <div class="sm:col-span-2">
+            <label class="text-sm font-bold">رفع فيديو اللعب (حد أقصى 2 دقيقة)</label>
+            <div class="mt-2 rounded-3xl border-2 border-dashed border-black/15 dark:border-white/15 p-5 bg-white/40 dark:bg-gray-950/20">
+              <input type="file" id="bGameVideo" name="bGameVideo" accept="video/*" class="hidden" required />
+              <label for="bGameVideo" class="cursor-pointer flex flex-col items-center text-center gap-2">
+                <div class="w-14 h-14 rounded-2xl grid place-items-center bg-black/5 dark:bg-white/5">
+                  <i class="fa-solid fa-cloud-arrow-up text-2xl"></i>
+                </div>
+                <div class="text-sm text-gray-700 dark:text-gray-200">اضغط لرفع الفيديو أو اسحبه هنا</div>
+                <div id="fileName" class="text-xs text-gray-600 dark:text-gray-300"></div>
+              </label>
+            </div>
+          </div>
+
+          <div class="sm:col-span-2 mt-2">
+            <button type="submit" class="btn-sheen w-full px-5 py-3 rounded-2xl bg-gradient-to-l from-indigo-600 via-emerald-600 to-pink-600 text-white font-black hover:opacity-95 transition">
+              إرسال الطلب
+            </button>
+            <p class="mt-2 text-xs text-gray-600 dark:text-gray-300 text-center">اضغط مرة واحدة فقط</p>
+          </div>
+
+          <div id="bookingResponse" class="sm:col-span-2 hidden"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="mx-auto max-w-7xl px-4 py-10">
+    <div class="glass rounded-3xl p-6 sm:p-8">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-black">استعلم عن نتيجة التقديم</h2>
+          <p class="mt-2 text-gray-700 dark:text-gray-200">
+            لو ظهر “لا توجد نتائج” اعمل Refresh.
+          </p>
+        </div>
+        <div class="text-sm text-gray-600 dark:text-gray-300">
+          <i class="fa-solid fa-rotate"></i>
+          Refresh عند الحاجة
+        </div>
+      </div>
+
+      <form id="inquiryForm" class="mt-6 grid sm:grid-cols-[1fr_auto] gap-3">
+        <input id="iPhone" type="tel" required placeholder="اكتب رقم الهاتف"
+          class="w-full px-4 py-3 rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-gray-950/40 focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+        <button type="submit" class="btn-sheen px-6 py-3 rounded-2xl bg-emerald-600 text-white font-black hover:bg-emerald-700 transition">
+          بحث
+        </button>
+      </form>
+
+      <div id="inquiryResponse" class="mt-6 hidden">
+        <div class="rounded-3xl border border-black/10 dark:border-white/10 p-5 bg-white/40 dark:bg-gray-950/20">
+          <div class="flex items-center justify-between gap-3">
+            <div class="font-black text-lg">خيارات النتيجة</div>
+            <button id="closeResult" type="button" class="w-10 h-10 rounded-2xl grid place-items-center hover:bg-black/5 dark:hover:bg-white/5 transition" aria-label="إغلاق">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <div id="resultOptions" class="mt-4 grid sm:grid-cols-2 gap-3 hidden">
+            <button id="downloadResult" type="button" class="btn-sheen px-4 py-3 rounded-2xl bg-indigo-600 text-white font-black hover:bg-indigo-700 transition inline-flex items-center justify-center gap-2">
+              <i class="fa-solid fa-download"></i>
+              تحميل
+            </button>
+            <button id="viewResult" type="button" class="btn-sheen px-4 py-3 rounded-2xl bg-gray-900 text-white font-black hover:bg-black transition dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200 inline-flex items-center justify-center gap-2">
+              <i class="fa-solid fa-eye"></i>
+              عرض
+            </button>
+          </div>
+
+          <div id="resultViewer" class="mt-4 hidden">
+            <div id="loadingSpinner" class="py-8 grid place-items-center">
+              <div class="w-12 h-12 rounded-full border-4 border-black/10 dark:border-white/10 border-t-indigo-600 animate-spin"></div>
+              <div class="mt-3 text-sm text-gray-600 dark:text-gray-300">جاري التحميل…</div>
+            </div>
+
+            <iframe id="resultFrame" src="" class="w-full h-[28rem] rounded-2xl border border-black/10 dark:border-white/10 hidden"></iframe>
+            <img id="resultImage" src="" alt="النتيجة" class="w-full h-auto rounded-2xl border border-black/10 dark:border-white/10 hidden" />
+          </div>
+
+          <div id="resultError" class="mt-4 hidden"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="mx-auto max-w-7xl px-4 py-10">
+    <div class="grid lg:grid-cols-2 gap-6 items-start">
+      <div class="glass rounded-3xl p-6 sm:p-8">
+        <h2 class="text-2xl sm:text-3xl font-black">لو عندك استفسار</h2>
+        <p class="mt-2 text-gray-700 dark:text-gray-200">ابعت بياناتك ورسالتك، وهنرد عليك.</p>
+
+        <div class="mt-6 rounded-2xl p-5 bg-black/5 dark:bg-white/5">
+          <div class="flex items-center gap-2 font-bold">
+            <i class="fa-solid fa-circle-question"></i>
+            نصيحة
+          </div>
+          <p class="mt-2 text-sm text-gray-700 dark:text-gray-200">
+            اكتب التفاصيل بوضوح (اسمك + المشكلة + أي رقم مرتبط).
+          </p>
+        </div>
+      </div>
+
+      <div class="glass rounded-3xl p-6 sm:p-8">
+        <form id="contactForm" class="grid sm:grid-cols-2 gap-4">
+          <div class="sm:col-span-2">
+            <label class="text-sm font-bold">الاسم</label>
+            <input id="cName" type="text" required
+              class="mt-1 w-full px-4 py-3 rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-gray-950/40 focus:outline-none focus:ring-2 focus:ring-pink-500" />
+          </div>
+
+          <div>
+            <label class="text-sm font-bold">البريد الإلكتروني</label>
+            <input id="cEmail" type="email" required
+              class="mt-1 w-full px-4 py-3 rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-gray-950/40 focus:outline-none focus:ring-2 focus:ring-pink-500" />
+          </div>
+
+          <div>
+            <label class="text-sm font-bold">رقم الهاتف</label>
+            <input id="cPhone" type="tel" required
+              class="mt-1 w-full px-4 py-3 rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-gray-950/40 focus:outline-none focus:ring-2 focus:ring-pink-500" />
+          </div>
+
+          <div class="sm:col-span-2">
+            <label class="text-sm font-bold">تفاصيل الرسالة</label>
+            <textarea id="cMessage" rows="4" required
+              class="mt-1 w-full px-4 py-3 rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-gray-950/40 focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
+          </div>
+
+          <div class="sm:col-span-2">
+            <button type="submit" class="btn-sheen w-full px-5 py-3 rounded-2xl bg-gradient-to-l from-pink-600 via-indigo-600 to-emerald-600 text-white font-black hover:opacity-95 transition">
+              إرسال
+            </button>
+          </div>
+
+          <div id="contactResponse" class="sm:col-span-2"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="mx-auto max-w-7xl px-4 pb-10">
+    <div class="glass rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl grid place-items-center bg-black/5 dark:bg-white/5">
+          <i class="fa-solid fa-crown"></i>
+        </div>
+        <div>
+          <div class="font-black text-lg">Clan SHADOW_ELITE</div>
+          <div class="text-xs text-gray-600 dark:text-gray-300">© 2026 جميع الحقوق محفوظة</div>
+        </div>
+      </div>
+
+      <a href="#home" class="inline-flex items-center gap-2 px-4 py-2 rounded-2xl border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition">
+        <i class="fa-solid fa-arrow-up"></i>
+        للأعلى
+      </a>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" class="toast fixed bottom-5 left-5 z-[60]">
+    <div id="toastBox" class="glass rounded-2xl px-4 py-3 flex items-start gap-3">
+      <div id="toastIcon" class="w-10 h-10 rounded-2xl grid place-items-center bg-black/5 dark:bg-white/5">
+        <i class="fa-solid fa-bell"></i>
+      </div>
+      <div>
+        <div id="toastTitle" class="font-black">رسالة</div>
+        <div id="toastMsg" class="text-sm text-gray-700 dark:text-gray-200"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ===== Theme =====
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+
+    const applyTheme = (isDark) => {
+      document.documentElement.classList.toggle('dark', isDark);
+      localStorage.setItem('darkMode', isDark ? 'true' : 'false');
+      themeIcon.className = isDark
+        ? 'fa-solid fa-sun text-yellow-300'
+        : 'fa-solid fa-moon text-gray-700 dark:text-yellow-300';
+    };
+
+    applyTheme(localStorage.getItem('darkMode') === 'true');
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = !document.documentElement.classList.contains('dark');
+      applyTheme(isDark);
+    });
+
+    // ===== Mobile Menu =====
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileIcon = document.getElementById('mobileIcon');
+
+    mobileBtn.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      mobileIcon.className = open
+        ? 'fa-solid fa-xmark text-gray-700 dark:text-gray-200'
+        : 'fa-solid fa-bars text-gray-700 dark:text-gray-200';
+    });
+
+    // اغلاق القائمة بعد الضغط على رابط
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        mobileIcon.className = 'fa-solid fa-bars text-gray-700 dark:text-gray-200';
+      });
+    });
+
+    // ===== FAQ Accordion =====
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const btn = item.querySelector('.faq-btn');
+      btn.addEventListener('click', () => {
+        item.classList.toggle('open');
+      });
+    });
+
+    // ===== Toast =====
+    const toast = document.getElementById('toast');
+    const toastTitle = document.getElementById('toastTitle');
+    const toastMsg = document.getElementById('toastMsg');
+    const toastIcon = document.getElementById('toastIcon');
+
+    let toastTimer = null;
+    function showToast(title, message, type = 'info') {
+      toastTitle.textContent = title;
+      toastMsg.textContent = message;
+
+      const icons = {
+        info: 'fa-solid fa-circle-info',
+        success: 'fa-solid fa-circle-check',
+        error: 'fa-solid fa-triangle-exclamation'
+      };
+      toastIcon.innerHTML = `<i class="${icons[type] || icons.info}"></i>`;
+
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 3200);
+    }
+
+    // ===== File name =====
+    const fileInput = document.getElementById('bGameVideo');
+    const fileName = document.getElementById('fileName');
+
+    fileInput.addEventListener('change', () => {
+      fileName.textContent = fileInput.files.length ? fileInput.files[0].name : '';
+    });
+
+    // ===== Booking Form =====
+    const bookingForm = document.getElementById('bookingForm');
+    const bookingResponse = document.getElementById('bookingResponse');
+
+    bookingForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData();
+      formData.append('bName', document.getElementById('bName').value);
+      formData.append('bEmail', document.getElementById('bEmail').value);
+      formData.append('bPhone', document.getElementById('bPhone').value);
+      formData.append('bScrim', document.getElementById('bScrim').value);
+      formData.append('bDuration', document.getElementById('bDuration').value);
+      formData.append('bAge', document.getElementById('bAge').value);
+      if (fileInput.files[0]) formData.append('bGameVideo', fileInput.files[0]);
+
+      bookingResponse.classList.add('hidden');
+      bookingResponse.innerHTML = '';
+
+      try {
+        const res = await fetch('/api/booking', { method: 'POST', body: formData });
+        const data = await res.json();
+
+        bookingResponse.classList.remove('hidden');
+        bookingResponse.innerHTML = `
+          <div class="mt-2 rounded-2xl p-4 ${res.ok ? 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-200' : 'bg-red-500/15 text-red-700 dark:text-red-200'}">
+            ${data.message || (res.ok ? 'تم تقديم طلبك بنجاح!' : 'حدث خطأ أثناء تقديم الطلب')}
+          </div>
+        `;
+
+        if (res.ok) {
+          showToast('تم الإرسال', 'تم تقديم طلبك بنجاح', 'success');
+          bookingForm.reset();
+          fileName.textContent = '';
+        } else {
+          showToast('خطأ', data.message || 'حصلت مشكلة أثناء الإرسال', 'error');
+        }
+      } catch (err) {
+        bookingResponse.classList.remove('hidden');
+        bookingResponse.innerHTML = `
+          <div class="mt-2 rounded-2xl p-4 bg-red-500/15 text-red-700 dark:text-red-200">
+            تعذر الاتصال بالخادم. حاول مرة أخرى.
+          </div>
+        `;
+        showToast('اتصال', 'تعذر الاتصال بالخادم', 'error');
+      }
+    });
+
+    // ===== Results Inquiry =====
+    const inquiryForm = document.getElementById('inquiryForm');
+    const inquiryResponse = document.getElementById('inquiryResponse');
+    const resultOptions = document.getElementById('resultOptions');
+    const resultViewer = document.getElementById('resultViewer');
+    const resultFrame = document.getElementById('resultFrame');
+    const resultImage = document.getElementById('resultImage');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+    const downloadResult = document.getElementById('downloadResult');
+    const viewResult = document.getElementById('viewResult');
+    const closeResult = document.getElementById('closeResult');
+    const resultError = document.getElementById('resultError');
+
+    let currentResult = null;
+
+    function resetResultUI() {
+      resultOptions.classList.add('hidden');
+      resultViewer.classList.add('hidden');
+      loadingSpinner.classList.remove('hidden');
+      resultFrame.classList.add('hidden');
+      resultImage.classList.add('hidden');
+      resultError.classList.add('hidden');
+      resultError.innerHTML = '';
+      resultFrame.src = '';
+      resultImage.src = '';
+    }
+
+    function showResultError(message) {
+      resultError.classList.remove('hidden');
+      resultError.innerHTML = `
+        <div class="rounded-2xl p-4 bg-red-500/15 text-red-700 dark:text-red-200">
+          ${message}
+        </div>
+      `;
+      loadingSpinner.classList.add('hidden');
+      resultOptions.classList.add('hidden');
+      resultViewer.classList.add('hidden');
+      showToast('نتيجة', message, 'error');
+    }
+
+    inquiryForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const phone = document.getElementById('iPhone').value.trim();
+      inquiryResponse.classList.remove('hidden');
+      resetResultUI();
+      resultViewer.classList.remove('hidden');
+
+      try {
+        const response = await fetch(`/api/results/${encodeURIComponent(phone)}`);
+        const data = await response.json();
+
+        if (data.success && data.results && data.results.length > 0) {
+          currentResult = data.results[0];
+          loadingSpinner.classList.add('hidden');
+          resultViewer.classList.add('hidden');
+          resultOptions.classList.remove('hidden');
+          showToast('تم العثور', 'تم العثور على نتيجة لهذا الرقم', 'success');
+        } else {
+          currentResult = null;
+          showResultError(data.message || 'لا توجد نتائج لهذا الرقم');
+        }
+      } catch (error) {
+        currentResult = null;
+        showResultError('تعذر الاتصال بالخادم. حاول مرة أخرى.');
+      }
+    });
+
+    downloadResult.addEventListener('click', () => {
+      if (currentResult && currentResult.fileUrl) {
+        const a = document.createElement('a');
+        a.href = currentResult.fileUrl;
+        a.download = 'نتيجة-SHADOW_ELITE.pdf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        showToast('تحميل', 'بدأ تحميل الملف', 'info');
+      }
+    });
+
+    viewResult.addEventListener('click', () => {
+      if (!currentResult || !currentResult.fileUrl) return;
+
+      resultOptions.classList.add('hidden');
+      resultViewer.classList.remove('hidden');
+      loadingSpinner.classList.remove('hidden');
+      resultFrame.classList.add('hidden');
+      resultImage.classList.add('hidden');
+      resultError.classList.add('hidden');
+
+      setTimeout(() => {
+        loadingSpinner.classList.add('hidden');
+        const url = currentResult.fileUrl;
+
+        if (url.toLowerCase().endsWith('.pdf')) {
+          resultFrame.src = url;
+          resultFrame.classList.remove('hidden');
+        } else {
+          resultImage.src = url;
+          resultImage.classList.remove('hidden');
+        }
+      }, 600);
+    });
+
+    closeResult.addEventListener('click', () => {
+      inquiryResponse.classList.add('hidden');
+    });
+
+    // ===== Contact Form =====
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('cName').value.trim();
+      const email = document.getElementById('cEmail').value.trim();
+      const phone = document.getElementById('cPhone').value.trim();
+      const message = document.getElementById('cMessage').value.trim();
+      const responseDiv = document.getElementById('contactResponse');
+
+      if (!name || !email || !phone || !message) {
+        responseDiv.innerHTML = `
+          <div class="mt-2 rounded-2xl p-4 bg-red-500/15 text-red-700 dark:text-red-200">
+            من فضلك املأ جميع الحقول المطلوبة
+          </div>
+        `;
+        showToast('تحقق', 'املأ كل الحقول المطلوبة', 'error');
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, phone, message })
+        });
+
+        const data = await response.json();
+
+        responseDiv.innerHTML = `
+          <div class="mt-2 rounded-2xl p-4 ${data.success ? 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-200' : 'bg-red-500/15 text-red-700 dark:text-red-200'}">
+            ${data.message || (data.success ? 'تم الإرسال بنجاح' : 'حدث خطأ أثناء الإرسال')}
+          </div>
+        `;
+
+        if (data.success) {
+          showToast('تم الإرسال', 'وصلت رسالتك بنجاح', 'success');
+          document.getElementById('contactForm').reset();
+        } else {
+          showToast('خطأ', data.message || 'حصلت مشكلة أثناء الإرسال', 'error');
+        }
+      } catch (error) {
+        responseDiv.innerHTML = `
+          <div class="mt-2 rounded-2xl p-4 bg-red-500/15 text-red-700 dark:text-red-200">
+            حدث خطأ أثناء الإرسال. حاول مرة أخرى.
+          </div>
+        `;
+        showToast('اتصال', 'تعذر الاتصال بالخادم', 'error');
+      }
+    });
+  </script>
+</body>
+</html>
